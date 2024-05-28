@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1200" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.equalizer.FXMLDocumentController">
+    <children>
+
+        <Label fx:id="l_open" layoutX="18.0" layoutY="24.0" text="Open *.wav file" />
+        <Button fx:id="button_select" layoutX="160.0" layoutY="14.0" onAction="#open" prefHeight="35" prefWidth="40" text="" />
+
+        <Button fx:id="button_play" layoutX="19.0" layoutY="109.0" onAction="#play" prefHeight="35" prefWidth="40" text="" />
+
+        <Button fx:id="button_pause" layoutX="69.0" layoutY="109.0" onAction="#pause" prefHeight="35" prefWidth="40" text="" />
+        <Button fx:id="button_reset" layoutX="239.0" layoutY="75.0" onAction="#reset" prefHeight="35" prefWidth="90" text="      Reset" />
+
+        <Slider fx:id="soundSlider" layoutX="20.0" layoutY="87.0" max="1.0" min="0" orientation="HORIZONTAL" rotate="0" value="0.5">
+        </Slider>
+
+        <Label fx:id="ef" layoutX="14.0" layoutY="157.0" text="Choose effect:" />
+        <CheckBox layoutX="20.0" layoutY="185.0" onAction="#chorusBox" text="Chorus" />
+        <CheckBox layoutX="20.0" layoutY="225.0" onAction="#distBox" text="Distortion" />
+        <Slider fx:id="distortionSlider" layoutX="19.0" layoutY="259.0" max="7" maxWidth="110" min="0" rotate="0" value="1.0">
+        </Slider>
+        <HBox layoutX="366.0" layoutY="42.0" prefHeight="20" prefWidth="802.0">
+            <children>
+                <Label prefWidth="80.0" text="0-100 Hz" />
+                <Label prefWidth="80.0" text="100-120 Hz" />
+                <Label prefWidth="80.0" text="120-150 Hz" />
+                <Label prefWidth="80.0" text="150-320 Hz" />
+                <Label prefWidth="80.0" text="320-650 Hz" />
+                <Label prefWidth="80.0" text="0.65-1.32 kHz" />
+                <Label prefWidth="80.0" text="1.32-2.67 kHz" />
+                <Label prefWidth="80.0" text="2.67-5.35 kHz" />
+                <Label prefWidth="80.0" text="5.35-10.73 kHz" />
+                <Label prefWidth="80.0" text="10.73-22.0 kHz" />
+
+            </children>
+        </HBox>
+        <HBox layoutX="349.0" layoutY="67.0" prefHeight="166.0" prefWidth="829.0">
+            <children>
+                <Slider fx:id="Slider0" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+                <Slider fx:id="Slider1" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+                <Slider fx:id="Slider2" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+                <Slider fx:id="Slider3" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+                <Slider fx:id="Slider4" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+                <Slider fx:id="Slider5" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+                <Slider fx:id="Slider6" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+                <Slider fx:id="Slider7" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+                <Slider fx:id="Slider8" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+                <Slider fx:id="Slider9" max="0" min="-80" orientation="VERTICAL" prefWidth="80.0" value="0" />
+            </children>
+
+        </HBox>
+        <CheckBox fx:id="buttonPlot" layoutX="62.0" layoutY="412.0" maxWidth="110" onAction="#clickPlot" text="Plot">
+        </CheckBox>
+        <LineChart fx:id="chart1" layoutX="168.0" layoutY="240.0" legendVisible="false" title="Input" titleSide="TOP">
+            <xAxis><NumberAxis label="Bands" lowerBound="0" tickUnit="1" upperBound="3" fx:id="xAxis1" /></xAxis>
+            <yAxis><NumberAxis fx:id="yAxis1" label="Magnitude" lowerBound="0" tickUnit="1" upperBound="3" /></yAxis>
+
+        </LineChart>
+        <LineChart fx:id="chart2" layoutX="679.0" layoutY="240.0" legendVisible="false" title="Output" titleSide="TOP">
+            <xAxis><NumberAxis label="Bands" lowerBound="0" tickUnit="1" upperBound="3" fx:id="xAxis2" /></xAxis>
+            <yAxis><NumberAxis fx:id="yAxis2" label="Magnitude" lowerBound="0" tickUnit="1" upperBound="3" /></yAxis>
+        </LineChart>
+      <Label layoutX="25.0" layoutY="67.0" text="Sound" />
+      <Button fx:id="button_low" layoutX="239.0" layoutY="134.0" mnemonicParsing="false" onAction="#low" prefHeight="35.0" prefWidth="100.0" text="Low frequency" />
+      <Button fx:id="button_high" layoutX="240.0" layoutY="175.0" mnemonicParsing="false" onAction="#high" prefHeight="35.0" prefWidth="100.0" text="High frequency" />
+      <Label layoutX="1168.0" layoutY="68.0" text="0" />
+      <Label layoutX="1156.0" layoutY="210.0" prefHeight="15.0" prefWidth="40.0" text="-80 dB" />
+
+    </children>
+</AnchorPane>
